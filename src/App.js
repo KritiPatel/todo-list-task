@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+// import React from "react";
+// import { ToastContainer } from "react-toastify";
+// import "./App.css";
+// import TodoList from "./pages/todoPage/todoList";
+
+// function App() {
+//   return (
+//     <div className="App">
+//       <React.StrictMode>
+//         <TodoList />
+//         <ToastContainer />
+//       </React.StrictMode>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+import React from "react";
+import { Helmet } from "react-helmet";
+import { ToastContainer } from "react-toastify";
+import "./App.css";
+import TodoList from "./pages/todoPage/todoList";
+import { HELMET_TITLE } from "./utils/layout/HeaingConst";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Helmet>
+        <title>{HELMET_TITLE}</title>
+      </Helmet>
+      <React.StrictMode>
+        <TodoList />
+        <ToastContainer />
+      </React.StrictMode>
     </div>
   );
 }
