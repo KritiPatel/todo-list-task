@@ -100,32 +100,41 @@ const TodoList = () => {
         </Typography>
         <h3>Here, You can include a to-do item.</h3>
       </div>
-
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={openTaskModal}
-        style={{ marginTop: "20px", marginRight: "20px" }}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginBottom: "20px",
+          marginTop: "20px",
+        }}
       >
-        Add Task
-      </Button>
-      <Button
-        variant="contained"
-        color="primary"
-        disabled={!tasks.some((task) => task.completed)}
-        onClick={openCompletedTasksModal}
-        style={{ marginTop: "20px", marginRight: "20px" }}
-      >
-        Completed
-      </Button>
-      <Button
-        variant="outlined"
-        color="secondary"
-        onClick={clearCompletedTasks}
-        style={{ marginTop: "20px" }}
-      >
-        Clear Completed
-      </Button>
+        <Button
+          variant="outlined"
+          color="secondary"
+          onClick={clearCompletedTasks}
+        >
+          Clear Completed
+        </Button>
+        <div>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={openTaskModal}
+            style={{ marginRight: "10px" }}
+          >
+            Add Task
+          </Button>
+          <Button
+            variant="contained"
+            color="primary"
+            disabled={!tasks.some((task) => task.completed)}
+            onClick={openCompletedTasksModal}
+          >
+            Completed
+          </Button>
+        </div>
+      </div>
       <List>
         {tasks.map((task) => (
           <Task
